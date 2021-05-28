@@ -1,22 +1,34 @@
-# Socket-Server
+# REST Services + Frontend
 
-1.- Cambiar a carpeta server
+## Características
+Base de Datos:
 ```
- cd ./server/
-```
-
-2.- Reconstruir modulos de Node
-```
- npm install
+Redis
 ```
 
-3.- Generar el DIST
+Frontend:
 ```
-tsc -w
+Angular 12
 ```
 
-4.- Levantar server, cualquiera de estos dos comandos
+Backend API:
 ```
-nodemon dist/
-node dist/
+NodeJS
 ```
+## Docker
+Para ejecutarlo mediante docker, una vez clonado o copiado el proyecto, solo es necesario el siguiente comando en su consola situandose en la raiz del proyecto:
+```sh
+docker-compose up -d --build
+```
+
+## API Endpoints
+| Method | Request | Endpoint | Body Example |
+| ------ | ------ | ------ | ------ | 
+| POST | Crear Persona | ```/api/persons/``` | Empty |
+| GET | Obtener Personas | ```/api/persons/``` | Empty |
+| PATCH | Actualizar Persona(s) | ```/api/persons/``` | Empty |
+
+
+### Caracteristicas y detalles de funcionamiento
+Se aplicaron algunos patrones de desarrollo de software como Single Responsibility de SOLID, .
+Se desarrollo empleando Clean Code y lowerCamelCase 
