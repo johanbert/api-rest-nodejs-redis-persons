@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-2">
+    <div class="align-self-center p-2">
+
+      <h1 class="doc-title mt-5">Personas Registradas</h1>
+      <hr>
+      <form [formGroup]="formTable">
+        <table class="table table-striped table-dark table-hover">
+            <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Estado</th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr formArrayName="js" *ngFor="let person of jsonPersons; index as i">
+              <td scope="row">
+                <fieldset class="form-group text-center">
+                  <input type="checkbox" type="checkbox"
+                  value=""
+                  [id]="person.id"
+                  [formControlName]="i">
+                  <label [for]="person.id"></label>
+              </fieldset>
+                <!-- <div class="custom-control custom-checkbox">
+                  <input class="form-check-input custom-control-input"
+                    type="checkbox"
+                    value=""
+                    [id]="person.id"
+                    [formControlName]="i"  >
+                  <label class="custom-control-label" [for]="person.id"></label>
+                </div> -->
+              </td>
+              <td>{{ i + 1  }}</td>
+              <td>{{ person.first_name }}</td>
+              <td>{{ person.last_name }}</td>
+              <td>{{ person.processed }}</td>
+            </tr>
+            </tbody>
+          </table>
+      </form>
+      <hr>
+      <button type="button" class="btn btn-indigo btn-block m-0" (click)="updatePerson()">Procesar</button>
+    </div>
+  </div>
+</div>
+<!-- Checkbox values: {{ formTable.controls.js.value}}
+<br />
+listCheckeds values: {{ listCheckeds }} -->

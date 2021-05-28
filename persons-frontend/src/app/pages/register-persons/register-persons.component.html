@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center mt-2">
+    <div class="align-self-center p-2">
+        <!-- Material form login -->
+        <hr>
+        <div class="card">
+
+            <h5 class="card-header info-color white-text text-center py-4">
+            <strong>Formulario de Registro de Personas</strong>
+            </h5>
+        
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+        
+            <!-- Form -->
+            <form class="text-center" style="color: #757575;" action="#!" autocomplete="off" [formGroup]="form" (ngSubmit)="createPerson()">
+        
+                <!-- Email -->
+                <div class="md-form">
+                    <input type="text" 
+                    class="form-control"
+                    formControlName="first_name"
+                    [class.is-invalid]="getInvalidInput('first_name')">
+                    <label for="first_name">Nombre</label>
+                    <small class="text-danger" *ngIf="getInvalidInput('first_name')">Minimo 2 caracteres</small>
+                </div>
+                <div class="md-form">
+                    <input type="text" 
+                    class="form-control"
+                    formControlName="last_name"
+                    [class.is-invalid]="getInvalidInput('last_name')">
+                    <label for="last_name">Apellido</label>
+                    <small class="text-danger" *ngIf="getInvalidInput('last_name')">Minimo 2 caracteres</small>
+                </div>
+        
+                <div class="d-flex justify-content-around">
+                    <div>
+                    </div>
+                </div>
+        
+                <!-- Submit button -->
+                <button class="btn btn-outline-info btn-rounded btn-block my-4" type="submit">Registrar</button>
+        
+            </form>
+            <!-- Form -->
+        
+            </div>
+        
+        </div>
+        <hr>
+        <!-- Material form login -->
+    </div>
+</div>
+
+<!-- <hr>
+<pre>
+  Form Status: {{form.valid }}
+  <br>
+  Status: {{ form.status }}
+</pre>
+<pre>
+  {{ form.value | json}}
+</pre> -->
