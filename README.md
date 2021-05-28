@@ -31,4 +31,4 @@ docker-compose up -d --build
 
 ### Caracteristicas y detalles de funcionamiento
 Se aplicaron algunos patrones de desarrollo de software como Single Responsibility de SOLID, .
-Se desarrollo empleando Clean Code y lowerCamelCase 
+Se desarrollo empleando Clean Code y lowerCamelCase entre nombramiento de variables y métodos.
